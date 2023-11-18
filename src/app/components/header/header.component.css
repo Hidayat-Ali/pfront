@@ -1,0 +1,119 @@
+.header {
+  background: var(--gray-50);
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+  color: transparent;
+}
+.nav-link {
+  color: var(--gray-600, #4b5563);
+  font-family: "Inter", sans-serif;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 500;
+}
+.navbar-toggler {
+  background-image: url("src/assets/images/header/menu-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: none;
+  border: none;
+}
+.download-cv-btn {
+  color: var(--gray-50, #f9fafb);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 12px;
+  background: var(--header-button);
+}
+.vertical-line {
+  height: 40px;
+  border-right: 2px solid #07e32f;
+}
+.navbar-brand img {
+  width: 100%;
+  margin-left: -4vw;
+}
+.navbar-toggler {
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand img {
+    margin-left: -6vw;
+  }
+  .modal-open-close {
+    display: unset;
+  }
+  .download-cv-btn {
+    margin-top: 3vw;
+  }
+}
+@media (max-width: 500px) {
+  .navbar-brand img {
+    margin-left: -13vw;
+  }
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo h2 {
+  font-size: 5vw;
+  background-image: linear-gradient(to right, #ff6b6b, #c738d8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: pulseAnimation 2s ease-in-out infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulseAnimation {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.header-image {
+  position: absolute;
+  right: 0;
+}
+.mobile-view li a {
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 5vw;
+  border-bottom: 2px dashed lightgray;
+}
+.text-theme {
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 5vw;
+}
+.mobile-view {
+  padding-left: 0;
+  list-style: none;
+}
+.dark-mode-btn {
+  padding: 0;
+  outline: none;
+}
+.dark-icon-mobile,
+.light-icon-mobile {
+  width: 30px;
+  height: 30px;
+}

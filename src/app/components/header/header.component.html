@@ -1,0 +1,117 @@
+<div class="header container-fluid ">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg  ">
+            <div class="container">
+                <!-- Logo (adjust the image path accordingly) -->
+                <a class="navbar-brand" href="#"><img src="assets/images/header/logo.svg" alt=" Hidayat Ali Logo"></a>
+
+                <!-- Collapse button for mobile -->
+                <button class="navbar-toggler  " type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+                </button>
+
+                <!-- Menu options -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active">About |
+                                Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/all_work']"
+                                routerLinkActive="router-link-active">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="router-link-active">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/contact']"
+                                routerLinkActive="router-link-active">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="vertical-line nav-link"></div>
+                        </li> &nbsp;&nbsp;&nbsp;
+                    </ul>
+
+                    <div class="d-flex mr-auto">
+
+                        <div class="dark-mode">
+                            <button *ngIf="isDarkMode" class="btn dark-mode-btn" (click)="toggleMode()"><img
+                                    src="assets/images/header/dark-icon.svg" alt="dark-icon"></button>&nbsp;&nbsp;&nbsp;
+                            <button *ngIf="!isDarkMode" class="btn dark-mode-btn" (click)="toggleMode()"><img
+                                    src="assets/images/header/light-icon.svg" alt="light-icon"></button> &nbsp;&nbsp;
+                        </div>
+                        <div class="download-cv">
+                            <button class=" btn download-cv-btn"><img src="/assets/images/header/download.svg"
+                                    alt="Hidayat Ali Mir Cv"> CV</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-bs-backdrop="true" data-bs-keyboard="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <div class="logo">
+                        <h2 class="modal-title"> <span>&#9752;</span>Hidhu<span>&#9829;</span></h2>
+                    </div>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container-fluid">
+
+                        <div class="">
+                            <ul class="mobile-view">
+                                <li> <a class="nav-link" [routerLink]="['/']">About | Home </a></li>
+                                <li> <a class="nav-link" [routerLink]="['/all_work']">Work</a></li>
+                                <li><a class="nav-link" [routerLink]="['/contact']">Contact</a></li>
+
+                                <li>
+                                    <div class="dark-mode">
+                                        <button *ngIf="isDarkMode" class="btn dark-mode-btn" (click)="toggleMode()">
+                                            <span class="text-theme">Dark</span> &nbsp;&nbsp;&nbsp;<img
+                                                class="dark-icon-mobile" src="assets/images/header/dark-icon.svg"
+                                                alt="dark-icon">
+                                        </button>
+                                        <button *ngIf="!isDarkMode" class="btn dark-mode-btn" (click)="toggleMode()">
+                                            <span class="text-theme">Light</span> &nbsp;&nbsp;&nbsp;<img
+                                                class="light-icon-mobile" src="assets/images/header/light-icon.svg"
+                                                alt="light-icon">
+                                        </button>
+                                    </div>
+                                </li>
+
+                                <div class="download-cv">
+                                    <button class=" btn download-cv-btn"><img src="/assets/images/header/download.svg"
+                                            alt="Hidayat Ali Mir Cv"> CV</button>
+                                </div>
+
+
+                            </ul>
+                        </div>
+                        <div class="image1 header-image "><img src="assets/images/hero/hidayat.jpg"
+                                class="img-fluid w-100" alt="Hidayat Ali logo" style="border-radius: 64% 26% 0% 26% / 66% 0% 25% 0%;
+
+"></div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

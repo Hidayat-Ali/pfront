@@ -1,0 +1,65 @@
+<button class="btn text-center text-white btn gback" [routerLink]="['/']">go back</button>
+<!-- blog-card.component.html -->
+<!-- {{blogPost$|json}} -->
+<div class="container-fluid">
+    <div class="row justify-content-center ">
+
+        <div class="col-lg-7 ">
+            <header class="header">
+                <h1 class="heading">{{blogPost?.title}}</h1>
+            </header>
+            <section class="content">
+                <img src='https://images.unsplash.com/photo-1466436578965-5cba086a1824?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=ac7f8b732c22f512fd982ffddc2078d6'
+                    alt='large-image' class="poster-image">
+                <p>{{blogPost?.dec}}</p>
+            </section>
+        </div>
+        <aside class="aside col-lg-4 ">
+            <h4 class="heading">Other Articles you might Enjoy</h4>
+            <div class="card">
+                <img src='https://images.unsplash.com/photo-1457269315919-3cfc794943cd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=2c42c1cac3092204f4c1afdca4d44e99'
+                    alt=''>
+                <div>
+                    <p class="heading title">The big subtext</p>
+                    <p class="author">Mathews</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src='https://images.unsplash.com/photo-1528640936814-4460bc015292?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=66812b5fda04c80ff762c8a920f562f3'
+                    alt=''>
+                <div>
+                    <p class="heading title">The bug subtext</p>
+                    <p class="author">Harsha</p>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <div class="row comment-form">
+        <form action="" class="col-lg-6 col-md-6 col-sm-12 ">
+            <div class="formbold-mb-5">
+                <label for="name" class="formbold-form-label"> Full Name </label>
+                <input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input" />
+            </div>
+
+            <div class="formbold-mb-5">
+                <label for="email" class="formbold-form-label"> Email Address </label>
+                <input type="email" name="email" id="email" placeholder="Enter your email"
+                    class="formbold-form-input" />
+            </div>
+
+            <div class="formbold-mb-5">
+                <label for="message" class="formbold-form-label"> Message </label>
+                <textarea rows="6" name="message" id="message" placeholder="Type your message"
+                    class="formbold-form-input"></textarea>
+            </div>
+
+            <div class="formbold-mb-5">
+                <button class="formbold-btn">Post Comment</button>
+            </div>
+        </form>
+    </div>
+
+
+</div>

@@ -1,0 +1,90 @@
+/* example.component.css */
+.experience {
+  background: var(--gray-200);
+}
+
+.designation {
+  color: var(--headding-color);
+  font-family: "Inter", sans-serif;
+  font-size: 1.1vw;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.duration {
+  color: var(--gray-600);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.experience-card {
+  border-radius: 12px;
+  background: var(--experience-card);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06),
+    0px 4px 3px 0px rgba(0, 0, 0, 0.07);
+  width: 80%;
+  margin: auto;
+}
+
+.experience-btn .btn {
+  border-radius: 12px;
+  background: var(--button-color);
+  color: var(--gray-600);
+  font-family: Inter;
+  font-size: 1.1vw;
+  font-style: normal;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.experience-btn .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.8) 70%,
+    transparent 100%
+  );
+  animation: waveAnimation 2s linear infinite;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.experience-summary {
+  color: var(--gray-600);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 1.3vw;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.work-detail ul {
+  color: var(--gray-600);
+}
+@media (max-width: 992px) {
+  .experience-btn .btn {
+    font-size: 3.5vw;
+  }
+  .experience-summary {
+    font-size: 3.2vw;
+  }
+}

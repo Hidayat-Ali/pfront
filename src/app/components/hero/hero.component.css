@@ -1,0 +1,89 @@
+.hero {
+  padding-top: 4vw;
+  background-color: var(--gray-50);
+}
+.show-mobile {
+  display: none;
+}
+.name {
+  color: var(--headding-color);
+  font-family: "Inter", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: -1.2px;
+}
+
+.company-name img {
+  object-fit: contain;
+  mix-blend-mode: lighten;
+  border-radius: 50%;
+}
+
+.bio-text {
+  color: var(--gray-600, #4b5563);
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.personal-address {
+  color: var(--gray-600, #4b5563);
+  font-family: "Inter", sans-serif;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 400;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #10b981;
+}
+.status {
+  color: var(--gray-600, #4b5563);
+  font-family: "Inter", sans-serif;
+  font-size: 1.2vw;
+  font-style: normal;
+  font-weight: 400;
+}
+.availability {
+  align-items: center;
+  gap: 1vw;
+  padding-left: 9px;
+}
+
+.img img {
+  box-shadow: var(--img-box-shadow);
+}
+
+@media (max-width: 780px) {
+  .mobile-view-hero {
+    flex-direction: column-reverse;
+  }
+  .show-desktop {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
+  }
+  .name {
+    padding-top: 10vw;
+    font-size: 10vw;
+  }
+  .salam {
+    padding-top: 10vw;
+    font-size: 10vw;
+  }
+  .personal-address {
+    font-size: 2.7vw;
+  }
+  .status {
+    font-size: 2.6vw;
+  }
+}

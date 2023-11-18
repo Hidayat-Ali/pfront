@@ -1,0 +1,22 @@
+<div *ngIf="blogPosts$ | async as blogPosts" class="py-1 latest-blogs">
+    <div class="container">
+        <div class="text-center py-2"><button class="btn latest-btn">Latest Blogs</button></div>
+        <div class="row fancy-cards">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let blogPost of blogPosts">
+                <div class="card fancy-card">
+                    <div class="top">
+                        <img [src]="blogPost?.photo" class="card-img-top" alt="Blog Photo">
+                        <div class="card-body caption">
+                            <h5 class="card-title">{{ blogPost?.title }}</h5>
+                            <p class="card-text">{{ blogPost?.dec }}</p>
+                            <a [routerLink]="['/blog', blogPost?._id]" class="button"> Read more... </a>
+                        </div>
+                    </div>
+                    <div class="middle"></div>
+                    <div class="bottom"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
