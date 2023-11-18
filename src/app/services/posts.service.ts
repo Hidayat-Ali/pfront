@@ -12,7 +12,7 @@ export class PostsService {
   constructor(private http: HttpClient) {
 
   }
-  post_url = ''
+  post_url = 'https://pback-lxcl.onrender.com'
   getPosts(): Observable<Post[]> {
 
     const url = `${this.post_url}/api/posts`;
