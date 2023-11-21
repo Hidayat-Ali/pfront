@@ -1,41 +1,39 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-lg-9">
-            <form>
+            <form (ngSubmit)="savePostToDb()">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="your-name" class="form-label">UserName*</label>
-                        <input type="text" class="form-control" id="your-name" name="your-name" required>
+                        <input type="text" class="form-control" id="your-name" name="userName" required
+                            [(ngModel)]="userName">
                     </div>
                     <div class="col-md-6">
-                        <label for="your-surname" class="form-label">Title*</label>
-                        <input type="text" class="form-control" id="your-surname" name="your-surname" required>
+                        <label for="your-name" class="form-label">Title*</label>
+                        <input type="text" class="form-control" id="your-name" name="title" required
+                            [(ngModel)]="title">
                     </div>
                     <div class="col-md-6">
-                        <label for="your-email" class="form-label"> Email*</label>
-                        <input type="email" class="form-control" id="your-email" name="your-email" required>
+                        <label for="your-name" class="form-label">email*</label>
+                        <input type="text" class="form-control" id="your-name" name="email" required
+                            [(ngModel)]="email">
                     </div>
                     <div class="col-md-6">
-                        <label for="your-subject" class="form-label">Category</label>
-                        <br>
-                        <select id="mounth" class="select">
+                        <label for="your-name" class="form-label">Category*</label>
+                        <input type="text" class="form-control" id="your-name" name="your-name" required
+                            [(ngModel)]="category">
+                    </div>
 
-                            <option value="january">January</option>
-                            <option value="february">February</option>
-                            <option value="march">March</option>
-                            <option value="april">April</option>
-
-                        </select>
-                    </div>
                     <div class="col-12">
                         <label for="your-message" class="form-label">Your Content</label>
-                        <ckeditor [editor]="Editor" id="editor" [data]="editorContent" (ready)="onReady($event)">
+                        <ckeditor [editor]="Editor" id="editor" [(ngModel)]="editorContent" (ready)="onReady($event)"
+                            [ngModelOptions]="{standalone: true}">
                         </ckeditor>
                     </div>
                     <div class="col-12">
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn-dark btn-sm" (click)="getEditorData()">Upload Post</button>
+                                <button type="submit" class="btn btn-dark btn-sm">Upload Post</button>
                             </div>
                         </div>
                     </div>

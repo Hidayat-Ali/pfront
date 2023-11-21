@@ -17,6 +17,8 @@ import { WorkComponent } from './components/work/work.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     BrowserModule,
     CKEditorModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-create-post',
@@ -8,22 +9,44 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
-  public Editor = ClassicEditor;
-  public editorContent = '';
-  private editorInstance: any; // Declare a private variable to hold the editor instance
+  Editor = ClassicEditor;
+  userName: string = '';
+  title: string = '';
+  email: string = '';
+  category: string = '';
+  editorContent: string = '';
 
-  public onReady(editor: any) {
-    this.editorInstance = editor; // Save the editor instance
+  constructor(public postService: PostsService) { }
+
+  savePostToDb(): void {
+    const postData = {
+      userName: this.userName,
+      title: this.title,
+      email: this.email,
+      category: this.category,
+      content: this.editorContent
+    };
+
+    this.postService.createPost(postData).subscribe(
+      (data) => {
+        console.log('Post saved to DB:', data);
+
+      },
+      (err) => {
+        console.error('Error saving post:', err.message);
+      }
+    );
+  }
+
+  onReady(editor: any) {
     console.log('Editor is ready!');
   }
 
-  public getEditorData() {
-    if (this.editorInstance) {
-      const data = this.editorInstance.getData();
-      console.log('Editor Data:', data);
-    } else {
-      console.error('Editor instance not available.');
-    }
+  resetForm() {
+    this.userName = '';
+    this.title = '';
+    this.email = '';
+    this.category = '';
+    this.editorContent = '';
   }
-
 }
