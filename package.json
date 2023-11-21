@@ -1,6 +1,10 @@
 {
   "name": "frontend",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=18  <20"
+  },
+
   "proxy": "https://pback-lxcl.onrender.com",
   "scripts": {
     "ng": "ng",
