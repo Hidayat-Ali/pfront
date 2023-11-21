@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.0.0",
   "engines": {
-    "node": ">=18  <20"
+    "node": ">=18.13  <20"
   },
 
   "proxy": "https://pback-lxcl.onrender.com",
