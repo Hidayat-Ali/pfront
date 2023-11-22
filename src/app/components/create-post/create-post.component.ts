@@ -33,7 +33,7 @@ export class CreatePostComponent {
 
       },
       (err) => {
-        console.error('Error saving post:', err.message);
+        console.error('Error saving post:', err);
       }
     );
   }
