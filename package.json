@@ -1,11 +1,9 @@
-{
+{ 
   "name": "frontend",
   "version": "0.0.0",
   "engines": {
     "node": ">=18.13  <20.9"
   },
-
-
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",

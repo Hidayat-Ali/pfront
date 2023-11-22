@@ -12,12 +12,14 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class BlogsComponent {
   blogPost: any;
+  postContent: any;
   constructor(private route: ActivatedRoute, private postService: PostsService) { }
   ngOnInit() {
     const postId = this.route.snapshot.paramMap.get('id');
     if (postId !== null) {
       const Newdata = this.postService.getPostById(postId).subscribe((data) => {
         this.blogPost = data;
+        this.postContent = this.blogPost.dec;
       });
 
 

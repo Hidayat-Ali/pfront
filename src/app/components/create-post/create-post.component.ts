@@ -20,11 +20,11 @@ export class CreatePostComponent {
 
   savePostToDb(): void {
     const postData = {
-      userName: this.userName,
+      username: this.userName,
       title: this.title,
       email: this.email,
       category: this.category,
-      content: this.editorContent
+      dec: this.editorContent
     };
 
     this.postService.createPost(postData).subscribe(

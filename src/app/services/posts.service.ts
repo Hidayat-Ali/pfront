@@ -24,6 +24,6 @@ export class PostsService {
   }
   createPost(data: any) {
     const url = `${this.post_url}/api/posts`;
-    return this.http.post(url, data, { headers: { 'Content-Type': 'application/json json' } });
+    return this.http.post(url, data, { headers: { 'Content-Type': 'application/json' } });
   }
 }
