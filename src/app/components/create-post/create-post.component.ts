@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+
 import { PostsService } from 'src/app/services/posts.service';
+import * as Editor from 'ckeditor5-custom-build/build/ckeditor';
 
 @Component({
   selector: 'app-create-post',
@@ -9,7 +9,7 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
-  Editor = ClassicEditor;
+  Editor: any = Editor;
   userName: string = '';
   title: string = '';
   email: string = '';

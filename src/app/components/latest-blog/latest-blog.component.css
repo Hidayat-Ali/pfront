@@ -65,7 +65,7 @@
   display: inline-block;
   position: relative;
   top: 40px;
-  left: 20px;
+  margin-bottom: 44px;
   box-sizing: border-box;
 }
 
@@ -75,15 +75,14 @@
   position: relative;
   border-radius: 3px;
   overflow: hidden;
-  width: 250px;
-  height: 250px;
+  width: 380px;
+  height: 480px;
   transition: transform 300ms linear-out;
 }
 .fancy-card .top {
   z-index: 3;
   transform: scale(1);
   transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  background-image: url("https://static-1.gumroad.com/res/gumroad/assets/collections/food_and_cooking_thumb-34fb9ef316a7b01177529839891c3a03.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0px 1px 3px rgba(25, 25, 25, 0.3);
@@ -146,4 +145,75 @@
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border: 0px;
+}
+
+.button1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #fcfcfc;
+  color: rgba(229, 122, 122, 0.945);
+  width: 200px;
+  font-size: 18px;
+  padding: 9px 0;
+  transition: all 0.3s;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.06);
+  position: relative;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  left: 82px;
+}
+
+.button1 .btn-icon {
+  background-color: black;
+  width: 82px;
+  height: 45px;
+  float: right;
+  position: absolute;
+  border-radius: 30px 30px 30px 0;
+  right: 0px;
+  top: 0px;
+  transition: all 0.3s;
+}
+
+.button1 .name-descripeion {
+  position: relative;
+  z-index: 9999;
+}
+
+.button1 .btn-icon::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 45px solid #fcfcfc;
+  border-right: 40px solid transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.button1:hover .btn-icon {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.button1:hover .btn-icon::after {
+  display: none;
+  opacity: 0.1;
+}
+
+.button1 .btn-icon i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #fff;
+}
+
+.button1:hover {
+  color: #fff !important;
+}
+.content-description {
+  padding-bottom: 5px;
 }

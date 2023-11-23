@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule } from '@angular/forms';
+import { TruncatePipe } from './pipes/truncate.pipe';
+
+
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { FormsModule } from '@angular/forms';
     SkilssComponent,
     HeaderComponent,
     WorkComponent,
-    CreatePostComponent
+    CreatePostComponent,
+
+
+
 
   ],
   imports: [
@@ -41,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     CKEditorModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TruncatePipe
 
   ],
   providers: [],
