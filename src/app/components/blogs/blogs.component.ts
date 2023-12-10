@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Post } from 'src/app/Post';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -12,14 +12,15 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class BlogsComponent {
   blogPost: any;
-  postContent: any;
-  constructor(private route: ActivatedRoute, private postService: PostsService) { }
+  postContent!: SafeHtml;
+  constructor(private route: ActivatedRoute, private postService: PostsService, private sanitizer: DomSanitizer) { }
   ngOnInit() {
     const postId = this.route.snapshot.paramMap.get('id');
     if (postId !== null) {
       const Newdata = this.postService.getPostById(postId).subscribe((data) => {
         this.blogPost = data;
-        this.postContent = this.blogPost.dec;
+        this.postContent = this.sanitizer.bypassSecurityTrustHtml(this.blogPost.dec);
+
       });
 
 
