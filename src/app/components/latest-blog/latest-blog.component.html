@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="text-center py-2"><button class="btn latest-btn">Latest Blogs</button></div>
-        <div class="row fancy-cards">
+        <div class="row fancy-cards" #cardRow>
             <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let blogPost of blogPosts">
                 <div class="card fancy-card">
                     <div class="top" [style.backgroundImage]="'url(' + backgorundImageUrl + ')'">

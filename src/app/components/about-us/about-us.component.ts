@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-
+import { SplitText } from 'src/app/splitText'
 
 @Component({
   selector: 'app-about-us',
@@ -10,8 +9,40 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent {
+
+  private splitText!: SplitText;
+  constructor(private el: ElementRef) { }
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
+
+    this.splitText = new SplitText(this.el.nativeElement.querySelector('#split'));
+
+
+    const tl = gsap.timeline({ repeat: 30 });
+
+    gsap.set("#split", { opacity: 1 });
+
+    tl.from(this.splitText.chars, {
+      duration: 1,
+      y: 100,
+      rotation: 90,
+      opacity: 0,
+      ease: "elastic",
+      stagger: 0.03,
+    });
+
+    // Exploding text...
+    tl.to(this.splitText.chars, {
+      duration: 2.5,
+      opacity: 0,
+      rotation: "random(-2000, 2000)",
+      physics2D: {
+        angle: () => Math.random() * 80 + 240,
+        velocity: "random(300, 600)",
+        gravity: 800,
+      },
+      stagger: 0.015,
+    }, 3);
 
     gsap.from(".about-me-text p", {
       y: 100,
@@ -28,6 +59,19 @@ export class AboutUsComponent {
         scrub: true, // Smooth animation during scrolling
       }
     });
+    tl.to('.about-me-text p', {
+      duration: 3.5,
+      delay: 5,
+      opacity: 0,
+      rotation: "random(-2000, 2000)",
+      physics2D: {
+        angle: () => Math.random() * 80 + 240,
+        velocity: "random(300, 600)",
+        gravity: 800,
+      },
+      stagger: 0.015,
+    }, 3);
+
 
 
 
