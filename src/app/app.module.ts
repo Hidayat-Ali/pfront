@@ -19,6 +19,11 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule } from '@angular/forms';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { MagicComponent } from './components/magic/magic.component';
+
+
+
+
 
 
 
@@ -37,21 +42,19 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     HeaderComponent,
     WorkComponent,
     CreatePostComponent,
-
-
-
+    MagicComponent
 
   ],
+  providers: [],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     CKEditorModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    TruncatePipe
+    TruncatePipe,
 
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }
