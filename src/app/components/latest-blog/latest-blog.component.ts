@@ -14,7 +14,7 @@ import { SplitText } from 'src/app/splitText'
 
 })
 export class LatestBlogComponent {
-  constructor(private postService: PostsService, private el: ElementRef) { }
+  constructor(private postService: PostsService) { }
   @ViewChild('cardRow') cardRow!: ElementRef;
   splitTextBlogTitle!: SplitText
   backgorundImageUrl: string = "https://images.pexels.com/photos/13952899/pexels-photo-13952899.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
@@ -32,7 +32,7 @@ export class LatestBlogComponent {
       duration: 1,
       scrollTrigger: {
         trigger: this.cardRow.nativeElement,
-        start: 'top bottom-=100px',
+        start: 'top bottom -100px',
         end: 'top center',
         toggleActions: 'play none none none',
         markers: true,
