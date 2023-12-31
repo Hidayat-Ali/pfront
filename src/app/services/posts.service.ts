@@ -18,8 +18,8 @@ export class PostsService {
     const url = `${this.post_url}/api/posts`;
     return this.http.get<Post[]>(url);
   }
-  getPostById(id: string): Observable<Post[]> {
-    const url = `${this.post_url}/api/posts/${id}`;
+  getPostByName(topicName: string): Observable<Post[]> {
+    const url = `${this.post_url}/api/posts/${topicName}`;
     return this.http.get<Post[]>(url);
   }
   createPost(data: any) {

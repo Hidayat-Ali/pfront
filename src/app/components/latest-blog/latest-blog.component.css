@@ -55,6 +55,20 @@
   .latest-btn {
     font-size: 3.3vw;
   }
+  .fancy-card .top,
+  .fancy-card .middle,
+  .fancy-card .bottom {
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 82vw;
+    height: 100vh;
+    transition: transform 300ms linear-out;
+  }
+  .fancy-cards .fancy-card {
+    left: auto;
+    right: 3px;
+  }
 }
 
 .fancy-cards {

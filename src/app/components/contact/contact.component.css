@@ -1,0 +1,13 @@
+@media screen and (max-width: 768px) {
+  .contact-page {
+    display: rowreverse;
+  }
+}
+.contact {
+  background-color: var(--gray-50);
+  color: var(--headding-color);
+}
+.btn-rounded {
+  background-color: var(--send-btn);
+  color: var(--send-btn-color);
+}

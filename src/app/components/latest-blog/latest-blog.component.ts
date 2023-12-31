@@ -24,6 +24,9 @@ export class LatestBlogComponent {
     this.blogPosts$ = this.postService.getPosts();
 
   }
+  goToTop() {
+    window.scrollTo(0, 0);
+  }
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(this.cardRow.nativeElement, {
@@ -38,6 +41,7 @@ export class LatestBlogComponent {
         markers: true,
       }
     });
+
 
 
     //   this.splitTextBlogTitle = new SplitText(this.el.nativeElement.querySelector('card-title'));

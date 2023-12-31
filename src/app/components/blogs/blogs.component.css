@@ -4,6 +4,10 @@
   margin-top: 2rem;
   grid-column-gap: 2rem;
 }
+.blog-container {
+  background-color: var(--gray-50);
+  color: var(--headding-color);
+}
 
 .header {
   grid-column: 2 / 5;
@@ -17,7 +21,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: smaller;
-  color: #455a64;
+  color: var(--headding-color);
 }
 
 .content {
@@ -39,14 +43,14 @@
 
 .footer {
   grid-column: 1 / 5;
-  background-color: #37474f;
+  background-color: var(--gray-200);
   padding: 0.7rem 1rem;
   margin-top: 3rem;
   text-align: right;
 }
 
 .footer .name-link {
-  color: #ffffff;
+  color: var(--gray-200);
   text-decoration: none;
 }
 
@@ -106,7 +110,7 @@
   margin: 0 auto;
   max-width: 550px;
   width: 100%;
-  background: white;
+  background: var(--gray-200);
 }
 .formbold-form-label {
   display: block;
@@ -125,16 +129,16 @@
   width: 100%;
   padding: 12px 24px;
   border-radius: 6px;
-  border: 1px solid #e0e0e0;
-  background: white;
+  background: var(--gray-50);
   font-weight: 500;
   font-size: 16px;
-  color: #6b7280;
+  color: var(--headding-color);
   outline: none;
   resize: none;
+  border-color: var(--headding-color);
 }
 .formbold-form-input:focus {
-  border-color: #6a64f1;
+  border-color: var(--headding-color);
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -145,14 +149,17 @@
   padding: 14px 32px;
   border: none;
   font-weight: 600;
-  background-color: black;
-  color: white;
+  background-color: var(--gray-200);
+  color: var(--headding-color);
   cursor: pointer;
 }
 .formbold-btn:hover {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  background-color: #732121;
 }
-
+.formbold-btn:checked {
+  transform: scale(1.5);
+}
 .formbold--mx-3 {
   margin-left: -12px;
   margin-right: -12px;

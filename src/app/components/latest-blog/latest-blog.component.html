@@ -14,7 +14,8 @@
                             </div>
 
                         </div>
-                        <a [routerLink]="['/blog', blogPost?._id]" class="dedcription-btn button1 m-auto">
+                        <a [routerLink]="['/blog', blogPost?.title]" class="dedcription-btn button1 m-auto"
+                            (click)=" goToTop()">
                             <span class="name-descripeion ">Read more</span>
                             <div class="btn-icon">
                                 <i class="fas fa-chevron-right"></i>

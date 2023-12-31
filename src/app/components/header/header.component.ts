@@ -24,6 +24,8 @@ export class HeaderComponent {
     this.themeService.toggleMode();
     this.isDarkMode = !this.isDarkMode;
 
+
+
   }
   isDarkTheme(): boolean {
     return this.themeService.isDarkTheme();

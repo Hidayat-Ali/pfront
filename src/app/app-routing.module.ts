@@ -11,7 +11,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 
 const routes: Routes = [
   { component: HomeComponent, path: '', },
-  { component: BlogsComponent, path: 'blog/:id' },
+  { component: BlogsComponent, path: 'blog/:topicName' },
   { component: ContactComponent, path: 'contact' },
   { component: WorkComponent, path: 'all_work' },
   { component: CreatePostComponent, path: 'create-post' },

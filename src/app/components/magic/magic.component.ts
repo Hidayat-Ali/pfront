@@ -20,6 +20,7 @@ export class MagicComponent {
 
 
 
+
     const showDemo = () => {
       document.body.style.overflow = 'auto';
       document.scrollingElement?.scrollTo(0, 0);

@@ -15,15 +15,20 @@ export class BlogsComponent {
   postContent!: SafeHtml;
   constructor(private route: ActivatedRoute, private postService: PostsService, private sanitizer: DomSanitizer) { }
   ngOnInit() {
-    const postId = this.route.snapshot.paramMap.get('id');
-    if (postId !== null) {
-      const Newdata = this.postService.getPostById(postId).subscribe((data) => {
+    const encodedTopicName = this.route.snapshot.paramMap.get('title');
+
+    if (encodedTopicName !== null) {
+      const topicName = decodeURIComponent(encodedTopicName);
+
+
+      const Newdata = this.postService.getPostByName(topicName).subscribe((data) => {
         this.blogPost = data;
+
         this.postContent = this.sanitizer.bypassSecurityTrustHtml(this.blogPost.dec);
 
       });
 
-
+      console.log(topicName);
 
     }
 
