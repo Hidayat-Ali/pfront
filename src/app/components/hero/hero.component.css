@@ -87,3 +87,36 @@
     font-size: 2.6vw;
   }
 }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+#myVideo {
+  width: 100%;
+  height: 100%;
+}
+
+#playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#playButton:hover {
+  background-color: var(--button-color);
+}
+
+#playButton::after {
+  content: "\25B6";
+  font-size: 24px;
+}

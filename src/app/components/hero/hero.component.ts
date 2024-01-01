@@ -9,8 +9,32 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 })
 export class HeroComponent {
   constructor(private renderer2: Renderer2, private el: ElementRef) { }
+  isPlaying: boolean = false;
+  togglePlayPause(): void {
+    const video: HTMLVideoElement = <HTMLVideoElement>document.getElementById('myVideo');
+    var skipTime = 10; // Adjust this value as needed
+
+    // Check if the video has reached the end
+    if (video.currentTime + skipTime >= video.duration) {
+      // If skipping would go beyond the end, pause the video
+      video.pause();
+    } else {
+      // Skip the specified time
+      video.currentTime += skipTime;
+    }
+
+    if (video.paused || video.ended) {
+      video.play();
+    } else {
+      video.pause();
+    }
+
+    this.isPlaying = !this.isPlaying;
+  }
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
+
+
     const tl = gsap.timeline({
       repeat: -1,
       repeatDelay: 1,
