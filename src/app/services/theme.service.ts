@@ -11,12 +11,14 @@ export class ThemeService {
 
   toggleMode() {
     this.isDarkMode = !this.isDarkMode;
-    const theme = this.isDarkMode ? 'dark-theme' : 'light-theme';
+    const theme = this.isDarkMode ? 'light-theme' : 'dark-theme';
+
     document.documentElement.setAttribute('data-theme', theme);
   }
 
   isDarkTheme(): boolean {
     return this.isDarkMode;
   }
+
 }
 

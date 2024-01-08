@@ -1,6 +1,9 @@
 @media screen and (max-width: 768px) {
   .contact-page {
-    display: rowreverse;
+    flex-direction: column-reverse;
+  }
+  .githubprofile {
+    width: -webkit-fill-available !important;
   }
 }
 .contact {
@@ -10,4 +13,9 @@
 .btn-rounded {
   background-color: var(--send-btn);
   color: var(--send-btn-color);
+}
+.githubprofile {
+  width: auto;
+  height: 68%;
+  padding-bottom: 10px;
 }
