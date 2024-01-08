@@ -28,6 +28,7 @@ import { MagicComponent } from './components/magic/magic.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,9 @@ import { MagicComponent } from './components/magic/magic.component';
     HeaderComponent,
     WorkComponent,
     CreatePostComponent,
-    MagicComponent
+    MagicComponent,
+
+
 
   ],
   providers: [],
@@ -54,6 +57,7 @@ import { MagicComponent } from './components/magic/magic.component';
     HttpClientModule,
     FormsModule,
     TruncatePipe,
+
 
   ]
 })

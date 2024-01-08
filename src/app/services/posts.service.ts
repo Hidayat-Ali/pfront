@@ -18,8 +18,10 @@ export class PostsService {
     const url = `${this.post_url}/api/posts`;
     return this.http.get<Post[]>(url);
   }
-  getPostByName(topicName: string): Observable<Post[]> {
-    const url = `${this.post_url}/api/posts/${topicName}`;
+  getPostByName(title: string): Observable<Post[]> {
+    const encodedTopicName = encodeURIComponent(title)
+    const url = `${this.post_url}/api/posts/${encodedTopicName}`;
+    console.log(encodeURIComponent(title));
     return this.http.get<Post[]>(url);
   }
   createPost(data: any) {
