@@ -72,19 +72,19 @@ li {
   color: var(--headding-color);
 }
 
-.latest-btn {
+.magics-btn {
   border-radius: 12px;
   background: var(--button-color);
+  margin-bottom: 10px;
   padding: 4px 20px;
   justify-content: center;
   align-items: center;
+  text-transform: capitalize;
   color: var(--gray-600);
   font-family: Inter;
-  font-size: 1.3vw;
+  font-size: 14px;
   font-style: normal;
-
-  line-height: 20px;
-
+  font-weight: 500;
   position: relative;
   display: inline-block;
   border: none;
@@ -92,7 +92,7 @@ li {
   overflow: hidden;
 }
 
-.latest-btn::before {
+.magics-btn::before {
   content: "";
   position: absolute;
   top: 0;

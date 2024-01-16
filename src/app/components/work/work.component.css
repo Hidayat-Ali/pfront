@@ -7,11 +7,11 @@
 }
 
 .dark {
-  background: var(--gray-600);
+  background: var(--gray-50);
 }
 
 .light {
-  background: var(--gray-200);
+  background: var(--gray-50);
 }
 
 a,
@@ -31,7 +31,7 @@ a:hover {
 .postcard {
   flex-wrap: wrap;
   display: flex;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  box-shadow: 0 4px 21px -12px var(--gray-200);
   border-radius: 10px;
   margin: 0 0 2rem 0;
   overflow: hidden;
@@ -39,7 +39,7 @@ a:hover {
   color: var(--headding-color);
 }
 .postcard.dark {
-  background-color: var(--gray-600);
+  background-color: var(--gray-200);
 }
 .postcard.light {
   background-color: var(--gray-200);
@@ -76,7 +76,7 @@ a:hover {
   height: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  background-color: var(--gray-600);
+  background-color: var(--gray-200);
   transition: width 0.2s ease;
 }
 .postcard .postcard__text {
@@ -101,7 +101,7 @@ a:hover {
 }
 .postcard .postcard__tagbox .tag__item {
   display: inline-block;
-  background: rgba(83, 83, 83, 0.4);
+  background: var(--gray-200);
   border-radius: 3px;
   padding: 2.5px 10px;
   margin: 0 5px 5px 0;
@@ -110,7 +110,7 @@ a:hover {
   transition: background-color 0.3s;
 }
 .postcard .postcard__tagbox .tag__item:hover {
-  background: rgba(83, 83, 83, 0.8);
+  background: var(--gray-200);
 }
 .postcard:before {
   content: "";

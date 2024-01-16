@@ -103,6 +103,7 @@ button:focus:not(:focus-visible) {
   text-transform: uppercase;
   list-style: none;
   font-size: 5vw;
+  color: var(--headding-color);
 }
 .mobile-view {
   padding-left: 0;
@@ -116,4 +117,10 @@ button:focus:not(:focus-visible) {
 .light-icon-mobile {
   width: 30px;
   height: 30px;
+}
+.modal-content {
+  background-color: var(--gray-50);
+}
+.close-modal {
+  width: 30px;
 }

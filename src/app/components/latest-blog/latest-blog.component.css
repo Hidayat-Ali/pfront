@@ -62,7 +62,7 @@
     border-radius: 3px;
     overflow: hidden;
     width: 82vw !important;
-    height: 100vh !important;
+    height: 76vh !important;
 
     transition: transform 300ms linear-out;
   }
