@@ -87,7 +87,7 @@ export class HeroComponent {
           trigger: '.bio',
           start: '23% 40%',
           end: '30% 30%',
-          scrub: 0.6,
+          scrub: 2.6,
 
 
         },
@@ -107,29 +107,43 @@ export class HeroComponent {
           trigger: '.bio',
           start: '23% 40%',
           end: '30% 30%',
-          scrub: 0.6,
+          scrub: 2.6,
         },
       }
     );
 
     let element = document.querySelector('.show-mobile');
     let show_desktop = document.querySelector('.show-desktop');
+    let social_icons = document.querySelector('.social-icons');
     gsap.fromTo(element, {
       xPercent: 100,
-      autoAlpha: 0
+      autoAlpha: 0,
+      scrub: 3.4,
+
     }, {
       xPercent: 0,
       autoAlpha: 1,
-      duration: 1
+      duration: 1.4
     });
     gsap.fromTo(show_desktop, {
       xPercent: 100,
-      autoAlpha: 0
+      autoAlpha: 0,
+      scrub: 3.4
     }, {
       xPercent: 0,
       autoAlpha: 1,
-      duration: 1
+      duration: 1.5
     });
+    gsap.fromTo(social_icons, {
+      xPercent: -100,
+      autoAlpha: 0,
+      scrub: 3.4
+    }, {
+      xPercent: 0,
+      autoAlpha: 1,
+      duration: 1.5
+    });
+
 
   }
 
