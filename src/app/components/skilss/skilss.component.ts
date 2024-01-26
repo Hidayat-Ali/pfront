@@ -21,10 +21,10 @@ export class SkilssComponent {
       duration: 1,
       scrollTrigger: {
         trigger: skill,
-        start: 'top 95%', // Adjust this based on your needs
-        end: 'bottom 103%', // Adjust this based on your needs
-        scrub: 3.5, // This enables smooth scrubbing effect
-        markers: true
+        start: 'top 95%',
+        end: 'bottom 103%',
+        scrub: 3.5,
+
       },
     });
 
