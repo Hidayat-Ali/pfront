@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="text-center py-2"><button class="btn latest-btn">Latest Blogs</button></div>
-        <div class="row fancy-cards" #cardRow>
+        <!-- <div class="row fancy-cards" #cardRow>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let blogPost of blogPosts">
                 <div class="card fancy-card">
                     <div class="top" [style.backgroundImage]="'url(' + backgorundImageUrl + ')'">
@@ -27,6 +27,39 @@
 
             </div>
 
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let blogPost of blogPosts">
+                <div class="card text-white card-has-bg click-col"
+                    [style.backgroundImage]="'url(' + backgorundImageUrl + ')'">
+                    <img class="card-img d-none" [src]="blogPost?.photo" class="img-fluid" alt="Blog Photo">
+                    <div class="card-img-overlay d-flex flex-column">
+                        <div class="card-body">
+                            <small class="card-meta mb-2">{{ blogPost?.title }}</small>
+                            <!-- <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet
+                                    Consectetur
+                                    dipisi?</a></h4> -->
+                            <div *ngIf="blogPost">
+                                <div [innerHTML]="blogPost.dec | truncate:20"
+                                    class="content-description card-title mt-0"></div>
+                                <span class="name-descripeion " (click)=" goToTop()"> <a
+                                        [routerLink]="['/blog', formatTitleForLink(blogPost?.title)]">Read more</a>
+                                </span>
+                            </div>
+                            <small><i class="far fa-clock"></i> October 15, 2020</small>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
+
     </div>
 </div>
