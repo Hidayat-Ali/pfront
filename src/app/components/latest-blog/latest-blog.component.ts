@@ -19,13 +19,12 @@ export class LatestBlogComponent {
   splitTextBlogTitle!: SplitText
   backgorundImageUrl: string = "https://images.pexels.com/photos/13952899/pexels-photo-13952899.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
   blogPosts$: Observable<Post[]> | undefined;
+
   ngOnInit() {
 
     this.blogPosts$ = this.postService.getPosts();
   }
-  goToTop() {
-    window.scrollTo(0, 0);
-  }
+
   public formatTitleForLink(title: string | undefined): string {
     return title ? title.replace(/\s+/g, '-') : '';
   }

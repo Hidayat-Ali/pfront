@@ -43,7 +43,7 @@
                             <div *ngIf="blogPost">
                                 <div [innerHTML]="blogPost.dec | truncate:20"
                                     class="content-description card-title mt-0"></div>
-                                <span class="name-descripeion " (click)=" goToTop()"> <a
+                                <span class="name-descripeion "> <a
                                         [routerLink]="['/blog', formatTitleForLink(blogPost?.title)]">Read more</a>
                                 </span>
                             </div>

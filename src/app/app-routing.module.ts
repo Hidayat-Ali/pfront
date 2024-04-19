@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { WorkComponent } from './components/work/work.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
-
-
-
 
 const routes: Routes = [
   { component: HomeComponent, path: '', },
@@ -16,9 +13,13 @@ const routes: Routes = [
   { component: WorkComponent, path: 'all_work' },
   { component: CreatePostComponent, path: 'create-post' },
 ];
-
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration: 'enabled', // Automatically scroll to top on route change
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 0]
+};
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
