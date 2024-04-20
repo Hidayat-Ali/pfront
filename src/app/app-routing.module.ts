@@ -12,6 +12,7 @@ const routes: Routes = [
   { component: ContactComponent, path: 'contact' },
   { component: WorkComponent, path: 'all_work' },
   { component: CreatePostComponent, path: 'create-post' },
+  { path: '**', redirectTo: '' }
 ];
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled', // Automatically scroll to top on route change
