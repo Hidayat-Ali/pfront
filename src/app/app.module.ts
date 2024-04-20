@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { MagicComponent } from './components/magic/magic.component';
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -39,10 +40,11 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
   ],
   providers: [
     {
-      provide: RECAPTCHA_SETTINGS,
+      provide: [RECAPTCHA_SETTINGS, LocationStrategy],
       useValue: {
         siteKey: '6LfCM8ApAAAAABefVy7gA9LAKMxc48FGG2G7K7M9'
       } as RecaptchaSettings,
+      useClass: HashLocationStrategy
     },
   ],
   bootstrap: [AppComponent],
