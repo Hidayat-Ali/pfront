@@ -2,32 +2,7 @@
 
     <div class="container">
         <div class="text-center py-2"><button class="btn latest-btn">Latest Blogs</button></div>
-        <!-- <div class="row fancy-cards" #cardRow>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4" *ngFor="let blogPost of blogPosts">
-                <div class="card fancy-card">
-                    <div class="top" [style.backgroundImage]="'url(' + backgorundImageUrl + ')'">
-                        <img [src]="blogPost?.photo" class="img-fluid" alt="Blog Photo">
-                        <div class="card-body caption ">
-                            <h5 class="card-title text-success text-bold ">{{ blogPost?.title }}</h5>
-                            <div *ngIf="blogPost">
-                                <div [innerHTML]="blogPost.dec | truncate:40" class="content-description"></div>
-                            </div>
 
-                        </div>
-                        <a [routerLink]="['/blog', formatTitleForLink(blogPost?.title)]"
-                            class="description-btn button1 m-auto" (click)=" goToTop()">
-                            <span class="name-descripeion ">Read more</span>
-                            <div class="btn-icon">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div> -->
 
         <div class="row">
             <div class="col-md-4 mb-4" *ngFor="let blogPost of blogPosts">
@@ -37,9 +12,9 @@
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <small class="card-meta mb-2">{{ blogPost?.title }}</small>
-                            <!-- <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet
+                            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet
                                     Consectetur
-                                    dipisi?</a></h4> -->
+                                    dipisi?</a></h4>
                             <div *ngIf="blogPost">
                                 <div [innerHTML]="blogPost.dec | truncate:20"
                                     class="content-description card-title mt-0"></div>
@@ -60,6 +35,40 @@
 
 
         </div>
+        <!-- <article>
+            <section class="sectionWrapper">
+                <section class="swiper">
+                    <div class="parallax-bg" data-swiper-parallax="600" data-swiper-parallax-scale="0.85"></div>
+                    <div class="swiper-wrapper">
+                        <figure class="swiper-slide" *ngFor="let fish of fishes">
+                            <div class="cardPopout" data-swiper-parallax="30" data-swiper-parallax-scale="0.9"
+                                data-swiper-parallax-opacity="0.8" data-swiper-parallax-duration="1000">
+                                <img [src]="fish.imageUrl" [alt]="fish.name" width="800" height="400"
+                                    data-swiper-parallax="80" data-swiper-parallax-duration="2000">
+                                <h2 class="title" data-swiper-parallax="80" data-swiper-parallax-duration="1000">{{
+                                    fish.name }}</h2>
+                                <h4 class="subtitle" data-swiper-parallax="80" data-swiper-parallax-duration="1500">{{
+                                    fish.subtitle }}</h4>
+                                <figcaption data-swiper-parallax="80" data-swiper-parallax-duration="1250">
+                                    <p>{{ fish.description }}</p>
+                                </figcaption>
+                                <a href="javascript:void(0);" title="Continue Reading" data-swiper-parallax="80"
+                                    data-swiper-parallax-opacity="0.2" data-swiper-parallax-duration="1750">
+                                    Continue Reading
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </section>
+            </section>
+        </article> -->
+
 
     </div>
 </div>

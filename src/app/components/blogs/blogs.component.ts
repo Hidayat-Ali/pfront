@@ -1,19 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Post } from 'src/app/Post';
 import { PostsService } from 'src/app/services/posts.service';
-
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
   styleUrls: ['./blogs.component.css']
 })
 export class BlogsComponent {
+
+  token: string | undefined;
+
+
+
+
   blogPost: any;
   postContent!: SafeHtml;
-  constructor(private route: ActivatedRoute, private postService: PostsService, private sanitizer: DomSanitizer) { }
+  constructor(private route: ActivatedRoute, private postService: PostsService, private sanitizer: DomSanitizer) { this.token = undefined; }
   ngOnInit() {
     const encodedTopicName = this.route.snapshot.paramMap.get('title');
     console.log('i am ere', encodedTopicName);
@@ -35,7 +39,17 @@ export class BlogsComponent {
 
     }
 
+  }
 
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
+
+    console.debug(`Token [${this.token}] generated`);
   }
 
 

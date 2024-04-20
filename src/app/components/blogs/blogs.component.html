@@ -53,6 +53,15 @@
                 <textarea rows="6" name="message" id="message" placeholder="Type your message"
                     class="formbold-form-input"></textarea>
             </div>
+            <div class="col-sm-12 mb-2">
+                <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required
+                    [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">thsi
+                    is </re-captcha>
+                <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                    <div *ngIf="recaptcha.errors?.['required']">This field is required.
+                    </div>
+                </div>
+            </div>
 
             <div class="formbold-mb-5">
                 <button class="formbold-btn">Post Comment</button>
