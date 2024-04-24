@@ -14,13 +14,8 @@ const routes: Routes = [
   { component: CreatePostComponent, path: 'create-post' },
   { path: '**', redirectTo: '' }
 ];
-const routerOptions: ExtraOptions = {
-  scrollPositionRestoration: 'enabled', // Automatically scroll to top on route change
-  anchorScrolling: 'enabled',
-  scrollOffset: [0, 0]
-};
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

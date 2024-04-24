@@ -44,9 +44,10 @@
                                             required></textarea>
                                     </div>
                                     <div>
-                                        <div class="col-sm-12 mb-2">
+                                        <div class="col-12 mb-2">
                                             <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel"
                                                 [(ngModel)]="token" required
+                                                siteKey="6LfCM8ApAAAAABefVy7gA9LAKMxc48FGG2G7K7M9"
                                                 [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">thsi
                                                 is </re-captcha>
                                             <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"

@@ -53,24 +53,13 @@ export class AboutUsComponent {
         amount: 0.3
       },
       scrollTrigger: {
-        trigger: ".about-me-text", // Element to trigger the animation
-        start: "top center", // Animation starts when the top of the element reaches the center of the viewport
-        end: "bottom center", // Animation ends when the bottom of the element reaches the center of the viewport
-        scrub: true, // Smooth animation during scrolling
+        trigger: ".about-me-text",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
       }
     });
-    tl.to('.about-me-text p', {
-      duration: 3.5,
-      delay: 5,
-      opacity: 0,
-      rotation: "random(-2000, 2000)",
-      physics2D: {
-        angle: () => Math.random() * 80 + 240,
-        velocity: "random(300, 600)",
-        gravity: 800,
-      },
-      stagger: 0.015,
-    }, 3);
+
 
 
 
