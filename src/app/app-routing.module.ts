@@ -20,7 +20,7 @@ const routerOptions: ExtraOptions = {
   scrollOffset: [0, 0]
 };
 @NgModule({
-  imports: [RouterModule.forRoot(routes, routerOptions)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
