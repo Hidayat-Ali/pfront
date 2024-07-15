@@ -11,9 +11,23 @@ import * as imagesLoaded from 'imagesloaded';
 })
 export class MagicComponent {
   constructor(private el: ElementRef) { }
+  quotes: string[] = [
+    '"We Provide best IT  Solutions"',
+    '"We develop All kind of Frontend Applications with better creativity."',
+    '"if Your are the one looking for creating your portfolio?"',
+    '"We are here to make it easy for you!"',
+    '"JUST CONTACT US VIA OUR EMAIL"',
+    '"Thank You for visiting Our Website!"'
+  ];
+
+  currentQuote: string = this.quotes[0];
+  previousInt: number = 0;
+  fadeState: string = 'visible';
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
+    this.rotateBubbles();
+    setInterval(() => this.handleAnimation(), 7000);
 
     const images: Element[] = gsap.utils.toArray('img');
 
@@ -40,6 +54,32 @@ export class MagicComponent {
     }
 
     imagesLoaded(images).on('always', showDemo);
+  }
+  rotateBubbles() {
+    const bubbleContainer = document.querySelector('.bubble--container') as HTMLElement;
+    bubbleContainer.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], {
+      duration: 20000,
+      iterations: Infinity
+    });
+  }
+
+  handleAnimation() {
+    let randomInt = this.getRandomInt();
+
+    while (randomInt === this.previousInt) {
+      randomInt = this.getRandomInt();
+    }
+    this.previousInt = randomInt;
+
+    this.fadeState = 'hidden';
+    setTimeout(() => {
+      this.currentQuote = this.quotes[randomInt];
+      this.fadeState = 'visible';
+    }, 2800);
+  }
+
+  getRandomInt() {
+    return Math.floor(Math.random() * this.quotes.length);
   }
 
 }
