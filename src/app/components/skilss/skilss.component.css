@@ -11,7 +11,7 @@
   align-items: center;
   color: var(--gray-600);
   font-family: Inter;
-  font-size: 1.3vw;
+  font-size: 1.4vw;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
@@ -27,7 +27,7 @@
   color: var(--gray-600);
   text-align: center;
   font-family: Inter;
-  font-size: 1.3vw; /* Using a CSS variable for responsive font size */
+  font-size: 14px; /* Using a CSS variable for responsive font size */
   font-style: normal;
   font-weight: 400;
 }

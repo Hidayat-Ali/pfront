@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://pback-lxcl.onrender.com",
+    "target": "http://hidayat478.wordpress.com",
     "secure": false,
     "changeOrigin": true
   }

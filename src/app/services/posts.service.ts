@@ -12,7 +12,7 @@ export class PostsService {
   constructor(private http: HttpClient) {
 
   }
-  post_url = 'https://pback-1-6ajp.onrender.com'      //https://pback-lxcl.onrender.com  https://silver-beetle-yoke.cyclic.app
+  post_url = 'https://pback-1-6ajp.onrender.com'     //https://pback-lxcl.onrender.com  https://silver-beetle-yoke.cyclic.app
   getPosts(): Observable<Post[]> {
 
     const url = `${this.post_url}/api/posts`;
