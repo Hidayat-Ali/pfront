@@ -18,35 +18,35 @@ export class CreatePostComponent {
 
   constructor(public postService: PostsService) { }
 
-  savePostToDb(): void {
-    const postData = {
-      username: this.userName,
-      title: this.title,
-      email: this.email,
-      category: this.category,
-      dec: this.editorContent
-    };
+  //   savePostToDb(): void {
+  //     const postData = {
+  //       username: this.userName,
+  //       title: this.title,
+  //       email: this.email,
+  //       category: this.category,
+  //       dec: this.editorContent
+  //     };
 
-    this.postService.createPost(postData).subscribe(
-      (data) => {
-        console.log('Post saved to DB:', data);
+  //     this.postService.createPost(postData).subscribe(
+  //       (data) => {
+  //         console.log('Post saved to DB:', data);
 
-      },
-      (err) => {
-        console.error('Error saving post:', err);
-      }
-    );
-  }
+  //       },
+  //       (err) => {
+  //         console.error('Error saving post:', err);
+  //       }
+  //     );
+  //   }
 
-  onReady(editor: any) {
-    console.log('Editor is ready!');
-  }
+  //   onReady(editor: any) {
+  //     console.log('Editor is ready!');
+  //   }
 
-  resetForm() {
-    this.userName = '';
-    this.title = '';
-    this.email = '';
-    this.category = '';
-    this.editorContent = '';
-  }
+  //   resetForm() {
+  //     this.userName = '';
+  //     this.title = '';
+  //     this.email = '';
+  //     this.category = '';
+  //     this.editorContent = '';
 }
+// }

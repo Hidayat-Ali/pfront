@@ -1,26 +1,28 @@
-<div *ngIf="blogPosts$ | async as blogPosts" class="py-1 latest-blogs">
-
+<div *ngIf="blogPosts.length > 0" class="py-1 latest-blogs">
     <div class="container">
-        <div class="text-center py-2"><button class="btn latest-btn">Latest Blogs</button></div>
+        <div class="text-center py-2">
+            <button class="btn latest-btn">Latest Blogs</button>
+        </div>
         <div class="row">
             <div class="col-md-4 mb-4" *ngFor="let blogPost of blogPosts">
+                <!-- Blog Card -->
+                {{blogPost.ID}}
                 <div class="card text-white card-has-bg click-col"
-                    [style.backgroundImage]="'url(' + backgorundImageUrl + ')'">
-                    <img class="card-img d-none" [src]="blogPost?.photo" class="img-fluid" alt="Blog Photo">
+                    [style.backgroundImage]="'url(' + (blogPost?.featured_image || backgroundImageUrl) + ')'">
+                    <!-- <img class="card-img d-none" [src]="blogPost?.featured_image || backgroundImageUrl"
+                        class="img-fluid" alt="Blog Photo" /> -->
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
                             <small class="card-meta mb-2">{{ blogPost?.title }}</small>
-                            <!-- <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet
-                                    Consectetur
-                                    dipisi?</a></h4> -->
                             <div *ngIf="blogPost">
-                                <div [innerHTML]="blogPost.dec | truncate:20"
-                                    class="content-description card-title mt-0"></div>
-                                <span class="name-descripeion "> <a
-                                        [routerLink]="['/blog', formatTitleForLink(blogPost?.title)]">Read more</a>
+                                <div [innerHTML]="blogPost?.excerpt" class="content-description card-title mt-0"></div>
+                                <span class="name-description">
+                                    <a [routerLink]="['/blog',blogPost.ID, (blogPost?.title)]">
+                                        Read more
+                                    </a>
                                 </span>
                             </div>
-                            <small><i class="far fa-clock"></i> October 15, 2020</small>
+                            <small><i class="far fa-clock"></i> {{ blogPost?.date | date: 'MMMM d, yyyy' }}</small>
                         </div>
                     </div>
                 </div>

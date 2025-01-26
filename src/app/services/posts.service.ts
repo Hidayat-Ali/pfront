@@ -12,24 +12,22 @@ export class PostsService {
   constructor(private http: HttpClient) {
 
   }
-  post_url = 'https://pback-1-6ajp.onrender.com'     //https://pback-lxcl.onrender.com  https://silver-beetle-yoke.cyclic.app
+  post_url = 'https://public-api.wordpress.com/rest/v1.1/sites/hidayat734.wordpress.com'      // https://pback-1-6ajp.onrender.com
   getPosts(): Observable<Post[]> {
 
-    const url = `${this.post_url}/api/posts`;
-    return this.http.get<Post[]>(url);
+    const url = `${this.post_url}/posts`;
+
+    return this.http.get<Post[]>(url)
   }
-  getPostByName(title: string): Observable<Post[]> {
-    const encodedTopicName = encodeURIComponent(title)
-    console.log(encodedTopicName)
-    const url = `${this.post_url}/api/posts/${encodedTopicName}`;
-    return this.http.get<Post[]>(url, { headers: { 'Content-Type': 'application/json' } });
+  getPostById(postId: any): Observable<any> {
+    return this.http.get<any>(`${this.post_url}/posts/${postId}`);
   }
-  createPost(data: any) {
-    const url = `${this.post_url}/api/posts`;
-    return this.http.post(url, data, { headers: { 'Content-Type': 'application/json' } });
-  }
-  createComment(data: any) {
-    const url = `${this.post_url}/api/post/comment`;
-    return this.http.post(url, data, { headers: { 'Content-Type': 'application/json' } });
-  }
+  // createPost(data: any) {
+  //   const url = `${this.post_url}/api/posts`;
+  //   return this.http.post(url, data, { headers: { 'Content-Type': 'application/json' } });
+  // }
+  // createComment(data: any) {
+  //   const url = `${this.post_url}/api/post/comment`;
+  //   return this.http.post(url, data, { headers: { 'Content-Type': 'application/json' } });
+  // }
 }

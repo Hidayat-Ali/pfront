@@ -13,19 +13,26 @@ import Swiper from 'swiper';
 
 })
 export class LatestBlogComponent {
+  blogPosts: Post[] = []; // Holds the array of posts
+  backgroundImageUrl: string = 'https://images.pexels.com/photos/13952899/pexels-photo-13952899.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load';
+
   constructor(private postService: PostsService) { }
-  @ViewChild('cardRow') cardRow!: ElementRef;
-  splitTextBlogTitle!: SplitText
-  backgorundImageUrl: string = "https://images.pexels.com/photos/13952899/pexels-photo-13952899.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-  blogPosts$: Observable<Post[]> | undefined;
 
   ngOnInit() {
-
-    this.blogPosts$ = this.postService.getPosts();
+    // Subscribe to the observable to fetch posts
+    this.postService.getPosts().subscribe(
+      (response: any) => {
+        this.blogPosts = response.posts; // Assign posts array to blogPosts
+        console.log('Fetched posts:', this.blogPosts); // Log the fetched posts
+      },
+      (error) => {
+        console.error('Error fetching posts:', error); // Log any errors
+      }
+    );
   }
 
   public formatTitleForLink(title: string | undefined): string {
-    return title ? title.replace(/\s+/g, '-') : '';
+    return title ? title.replace(/\s+/g, '-').toLowerCase() : '';
   }
 }
 

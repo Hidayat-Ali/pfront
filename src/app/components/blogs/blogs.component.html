@@ -1,84 +1,71 @@
-<div class="container-fluid blog-container">
-    <button class="btn btn-dark btn-sm text-white  gback" [routerLink]="['/']">go back</button>
-    <div class="row justify-content-center ">
+<div *ngIf="blogPost" class="container-fluid blog-container">
+    <button class="btn btn-dark btn-sm text-white gback" [routerLink]="['/']">Go Back</button>
 
-
-        <div class="col-lg-7 ">
+    <!-- Blog Content -->
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
             <header class="header">
-                <h1 class="heading">{{blogPost?.title}}</h1>
+                <h1 class="heading">{{ blogPost?.title }}</h1>
             </header>
+
             <section class="content">
-                <img src='https://images.unsplash.com/photo-1466436578965-5cba086a1824?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=ac7f8b732c22f512fd982ffddc2078d6'
-                    alt='large-image' class="poster-image">
+                <!-- Display the post's featured image -->
+                <!-- <img [src]="blogPost?.featured_image || 'https://via.placeholder.com/600x400'" alt="large-image"
+                    class="poster-image" /> -->
+
+                <!-- Display the full content of the post -->
                 <div [innerHTML]="postContent"></div>
             </section>
+
+            <!-- Comments Section -->
             <div class="comments">
                 <h3>Comments</h3>
                 <ul>
-                    <!-- Check if blogPost and its comments exist -->
+                    <!-- Iterate over blogPost comments -->
                     <li *ngFor="let comment of blogPost?.comments">
                         <strong>{{ comment.userName }}:</strong> {{ comment.message }}
                     </li>
                 </ul>
             </div>
         </div>
-        <aside class="aside col-lg-4 ">
-            <h4 class="heading">Other Articles you might Enjoy</h4>
-            <div class="card">
-                <img src='https://images.unsplash.com/photo-1457269315919-3cfc794943cd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=2c42c1cac3092204f4c1afdca4d44e99'
-                    alt=''>
+
+        <!-- Sidebar for other articles (optional) -->
+        <aside class="aside col-lg-4">
+            <h4 class="heading">Other Articles You Might Enjoy</h4>
+            <div class="card" *ngIf="blogPost">
+                <img src="https://images.unsplash.com/photo-1457269315919-3cfc794943cd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=2c42c1cac3092204f4c1afdca4d44e99"
+                    alt="Related Post Image" />
                 <div>
-                    <p class="heading title">The big subtext</p>
-                    <p class="author">Mathews</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src='https://images.unsplash.com/photo-1528640936814-4460bc015292?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=66812b5fda04c80ff762c8a920f562f3'
-                    alt=''>
-                <div>
-                    <p class="heading title">The bug subtext</p>
-                    <p class="author">Harsha</p>
+                    <p class="heading title text-white">The big subtext</p>
+                    <p class="author text-white">Mathews</p>
                 </div>
             </div>
         </aside>
-
     </div>
 
+    <!-- Comment Form Section -->
     <div class="row comment-form">
-        <form action="" class="col-lg-6 col-md-6 col-sm-12 ">
+        <form class="col-lg-6 col-md-6 col-sm-12">
             <div class="formbold-mb-5">
-                <label for="name" class="formbold-form-label"> Full Name </label>
+                <label for="name" class="formbold-form-label text-white"> Full Name </label>
                 <input type="text" name="name" id="name" placeholder="Full Name" class="formbold-form-input"
                     [(ngModel)]="name" />
             </div>
 
             <div class="formbold-mb-5">
-                <label for="email" class="formbold-form-label"> Email Address </label>
+                <label for="email" class="formbold-form-label text-white"> Email Address </label>
                 <input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input"
                     [(ngModel)]="email" />
             </div>
 
             <div class="formbold-mb-5">
-                <label for="message" class="formbold-form-label"> Message </label>
+                <label for="message" class="formbold-form-label text-white"> Message </label>
                 <textarea rows="6" name="message" id="message" placeholder="Type your message"
                     class="formbold-form-input" [(ngModel)]="message"></textarea>
             </div>
-            <div class="col-sm-12 mb-2">
-                <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required
-                    siteKey="6LfCM8ApAAAAABefVy7gA9LAKMxc48FGG2G7K7M9"
-                    [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)">thsi
-                    is </re-captcha>
-                <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
-                    <div *ngIf="recaptcha.errors?.['required']">This field is required.
-                    </div>
-                </div>
-            </div>
-
             <div class="formbold-mb-5">
-                <button class="formbold-btn" (click)="addComment()">Post Comment</button>
+                <button class="formbold-btn" type="submit">Post Comment</button>
             </div>
         </form>
     </div>
-
-
 </div>
