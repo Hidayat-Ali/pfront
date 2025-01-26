@@ -15,7 +15,10 @@
                         <div class="card-body">
                             <small class="card-meta mb-2">{{ blogPost?.title }}</small>
                             <div *ngIf="blogPost">
-                                <div [innerHTML]="blogPost?.excerpt" class="content-description card-title mt-0"></div>
+                                <!-- <div [innerHTML]= "truncateText(blogPost?.excerpt, 20)" class="content-description card-title mt-0"></div> -->
+                                <div [innerHTML]="truncateText(blogPost?.excerpt ?? '', 20)"
+                                    class="content-description card-title mt-0"></div>
+
                                 <span class="name-description">
                                     <a [routerLink]="['/blog',blogPost.ID, (blogPost?.title)]">
                                         Read more
